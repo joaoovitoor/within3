@@ -1,4 +1,4 @@
-# pang-zippopotam
+# within3 React - Typescript - Graphql - zippopotam
 
 A simple application using GraphQL API and React connected to Zippopotam
 
