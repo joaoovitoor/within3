@@ -1,0 +1,54 @@
+{
+  "name": "pang-zippopotam-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently npm:start:graphql npm:generate-types",
+    "start": "ts-node -r tsconfig-paths/register src/apollo-graphql/index.ts",
+    "start:graphql": "ts-node -r tsconfig-paths/register src/apollo-graphql/index.ts",
+    "test:integ": "ts-node -r tsconfig-paths/register node_modules/.bin/jest \".integ\\.test\\.ts\" --runInBand --verbose",
+    "linter": "eslint . --fix --ext .ts --ext .tsx",
+    "prettier": "prettier .",
+    "generate-types": "graphql-codegen -r dotenv/config"
+  },
+  "keywords": [],
+  "author": "João Vitor Ramos Tonolli <joaoovitoor@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-tools/merge": "8.2.13",
+    "@graphql-tools/schema": "8.3.13",
+    "apollo-server": "3.8.2",
+    "axios": "0.27.2",
+    "dotenv": "16.0.1",
+    "graphql": "16.5.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/typescript": "2.4.11",
+    "@types/jest": "28.1.1",
+    "@typescript-eslint/eslint-plugin": "5.27.0",
+    "@typescript-eslint/parser": "5.27.0",
+    "concurrently": "7.2.1",
+    "eslint": "8.17.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.2.1",
+    "eslint-plugin-promise": "6.0.0",
+    "husky": "8.0.1",
+    "jest": "28.1.0",
+    "lint-staged": "13.0.0",
+    "prettier": "2.6.2",
+    "ts-jest": "28.0.4",
+    "ts-node": "10.8.1",
+    "tsconfig-paths": "4.0.0",
+    "typescript": "4.7.4"
+  },
+  "lint-staged": {
+    "(pages|src|bin)/**/*.+(js|json|yml|yaml|css|less|scss|ts|md|graphql|mdx)": [
+      "npx tsc",
+      "eslint . --fix --ext .ts --ext .tsx",
+      "prettier --write"
+    ]
+  }
+}

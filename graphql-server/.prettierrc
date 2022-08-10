@@ -1,0 +1,14 @@
+{
+  "parser": "typescript",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": false,
+  "bracketSpacing": true,
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": [".prettierrc", "src/**/*.ts", "src/**/*.integ.test.ts"],
+      "options": { "parser": "json" }
+    }
+  ]
+}
